@@ -36,6 +36,14 @@ The infrastructure is divided into several modules, each responsible for provisi
 
    The ALB module creates an Application Load Balancer to distribute incoming traffic across multiple instances in the Auto Scaling Group. It also sets up a target group to route requests to instances.
 
+## User Data Scripts
+
+- **Jump Server User Data**:
+  This script updates the system, installs Apache web server and PHP 7, starts the Apache service, and sets up WordPress for the jump server instance.
+
+- **Database Server User Data**:
+  This script updates the system, installs MariaDB server, configures MariaDB to listen on all IP addresses, creates a database and user for the web application, and restarts the MariaDB service.
+
 ## Variables
 
 The infrastructure code uses variables to customize the deployment according to your requirements. The `Variables.tfvar` file contains all the variables with their default values. You can modify these variables as needed to suit your use case.
